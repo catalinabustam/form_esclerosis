@@ -1,0 +1,33 @@
+<h4>4. Malformación vascular (MV)</h4>
+<small>Zonas a ser inspeccionadas: Todos los lóbulos, en menor proporción el temporal</small>
+<h6>Hallazgos a explorar:</h6>
+
+<%= rf.simple_fields_for :malformacion, @report.malformacion do |f| %>
+
+  <%= f.input :centro_hipert, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Centro hiperintenso:' %>
+
+  <%= f.input :senal_peri, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Señal periférica de vacío:' %>
+
+  <%= f.input :anillo_hipo, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Anillo hipointenso en T2 (deposito de hemosiderina):' %>
+
+  <%= f.input :vaso, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Vaso alimentando la malformación:' %>
+
+  <h6>Conclusiones:</h6>
+  <%= f.input :hallazgo_mv, label: 'Hallazgos sugestivos de MV tipo:' %>
+  <%= f.input :circunvolucion, label: 'Circunvolución:' %>
+  <%= f.input :lobulo, collection: @lobe, as: :select, default: 1, label: 'Lóbulo' %>
+  <%= f.input :hemisferio, collection: @hemisphere, as: :select, default: 1, label: 'Hemisferio' %>
+  <!--<em><%= f.input :lobulo2, collection: @lobe, as: :select,default: 1, label: 'Lóbulo 2' %>
+	  <%= f.input :hemisferio2, collection: @hemisphere, as: :select, default: 1, label: ' Hemisferio 2' %>
+  <%= f.input :lobulo3, collection: @lobe, as: :select,default: 1, label: 'Lóbulo 3' %>
+  <%= f.input :hemisferio3, collection: @hemisphere, as: :select, default: 1, label: 'Hemisferio 3' %>
+  <%= f.input :lobulo4, collection: @lobe, as: :select,default: 1, label: 'Lóbulo 4' %>
+<%= f.input :hemisferio4, collection: @hemisphere, as: :select, default: 1, label: 'Hemisferio 4' %></em>
+-->
+<!-- lo anterior se puso en comentario para imprimir los reportes-->
+  <em></em>
+<%end%>
